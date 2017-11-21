@@ -1,14 +1,18 @@
 package com.example.android.androidstudypro;
 
-import android.content.Intent;
-import android.content.UriMatcher;
-import android.net.Uri;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,14 +45,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+    private ImageView imageView;
+    private ProgressBar progressBar;
+    private Button button;
+    private TextView textView;
+    private EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
 
-        Button btn1 = (Button) findViewById(R.id.btn1);
-        btn1.setOnClickListener(new View.OnClickListener(){
+        imageView = (ImageView) findViewById(R.id.imageView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        button = (Button) findViewById(R.id.btn1);
+        textView = (TextView) findViewById(R.id.textView);
+        editText = (EditText) findViewById(R.id.editText);
+
+        button.setOnClickListener(new View.OnClickListener(){
 //            @Override
             public void onClick(View v){
 //                Toast.makeText(MainActivity.this, "哈哈哈", Toast.LENGTH_SHORT).show();
@@ -67,12 +83,52 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 
 //                拨打电话
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:123456789"));
-                startActivity(intent);
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:123456789"));
+//                startActivity(intent);
+
+
+                if (progressBar.getVisibility() == View.GONE){
+                    imageView.setImageResource(R.drawable.head2);
+                    progressBar.setVisibility(View.VISIBLE);
+                    textView.setText("");
+                } else {
+                    imageView.setImageResource(R.drawable.head1);
+                    progressBar.setVisibility(View.GONE);
+                    textView.setText(editText.getText());
+                }
+
+                int progress = progressBar.getProgress();
+                Log.i("test", "progress=" + progress);
+                progress += 10;
+                progressBar.setProgress(progress);
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("对话框");
+                dialog.setMessage("hello message: " + progress);
+                dialog.setCancelable(true);
+                dialog.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "click ok button !!!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                dialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "click cancel button !!!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+                dialog.show();
+
 
             }
         });
+
+
 
 
     }
