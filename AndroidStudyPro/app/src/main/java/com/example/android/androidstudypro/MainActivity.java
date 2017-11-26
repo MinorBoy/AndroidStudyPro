@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -69,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.btn1);
         textView = (TextView) findViewById(R.id.textView);
         editText = (EditText) findViewById(R.id.editText);
+
+//        backButton = (Button) findViewById(R.id.backButton);
+
 
         button.setOnClickListener(new View.OnClickListener(){
 //            @Override
