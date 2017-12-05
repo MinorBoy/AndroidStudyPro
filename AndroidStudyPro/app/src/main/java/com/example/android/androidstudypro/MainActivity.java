@@ -1,11 +1,11 @@
 package com.example.android.androidstudypro;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     private TextView textView;
     private EditText editText;
+    private Button changeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +66,11 @@ public class MainActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
+
         imageView = (ImageView) findViewById(R.id.imageView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         button = (Button) findViewById(R.id.btn1);
+        changeBtn = (Button) findViewById(R.id.chageBtn);
         textView = (TextView) findViewById(R.id.textView);
         editText = (EditText) findViewById(R.id.editText);
 
@@ -139,6 +142,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        changeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

@@ -41,6 +41,7 @@ public class TitleLayout extends LinearLayout  {
             }
         });
 
+//        titleText.setText();
 
     }
 }
