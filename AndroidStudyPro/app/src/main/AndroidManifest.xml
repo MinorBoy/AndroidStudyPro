@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="主活动">
+            android:label="@string/apk_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".SecondActivity"
-            android:label="第二个活动">
+            android:label="@string/second_activity">
             <intent-filter>
                 <action android:name="AAA"/>
 

@@ -2,10 +2,8 @@ package com.example.android.androidstudypro;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +20,7 @@ public class ListViewActivity extends AppCompatActivity {
     private List<Fruit> fruitList = new ArrayList<>();
 
     public void initFruits(){
-            for (int i=1; i<10; i++){
+            for (int i=1; i<3; i++){
                 Fruit icon1 = new Fruit("icon"+i, R.drawable.icon1);
                 fruitList.add(icon1);
                 Fruit icon2 = new Fruit("icon"+i, R.drawable.icon2);
@@ -37,6 +35,12 @@ public class ListViewActivity extends AppCompatActivity {
                 fruitList.add(icon6);
                 Fruit icon7 = new Fruit("icon"+i, R.drawable.icon7);
                 fruitList.add(icon7);
+                Fruit icon8 = new Fruit("icon"+i, R.drawable.icon8);
+                fruitList.add(icon8);
+                Fruit icon9 = new Fruit("icon"+i, R.drawable.icon9);
+                fruitList.add(icon9);
+                Fruit icon10 = new Fruit("icon"+i, R.drawable.icon10);
+                fruitList.add(icon10);
             }
     }
 
@@ -58,7 +62,7 @@ public class ListViewActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.i("listview","sssssssssssssss %s"+data[i]);
+//                Log.i("listview","sssssssssssssss %s"+data[i]);
                 String value = data[i];
                 Toast.makeText(ListViewActivity.this, value, Toast.LENGTH_SHORT).show();
             }
