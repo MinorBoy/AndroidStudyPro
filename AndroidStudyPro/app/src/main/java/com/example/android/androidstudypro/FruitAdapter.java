@@ -26,7 +26,15 @@ public class FruitAdapter extends ArrayAdapter<Fruit>{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Fruit fruit = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resouseId, parent, false);
+
+//        性能优化
+        View view;
+        if (convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(resouseId, parent, false);
+        }else {
+            view = convertView;
+        }
+
         ImageView imageView = (ImageView) view.findViewById(R.id.image);
         TextView name = (TextView) view.findViewById(R.id.name);
         imageView.setImageResource(fruit.getImageId());

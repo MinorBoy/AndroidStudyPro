@@ -50,16 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private ProgressBar progressBar;
-    private Button button;
+//    private Button button;
     private TextView textView;
     private EditText editText;
-    private Button changeBtn;
+    private Button listViewBtn,recyclerViewBtn,button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.first_layout);
+        setContentView(R.layout.activity_main);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -70,9 +70,10 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         button = (Button) findViewById(R.id.btn1);
-        changeBtn = (Button) findViewById(R.id.chageBtn);
         textView = (TextView) findViewById(R.id.textView);
         editText = (EditText) findViewById(R.id.editText);
+        listViewBtn = (Button) findViewById(R.id.listViewBtn);
+        recyclerViewBtn = (Button) findViewById(R.id.recyclerViewBtn);
 
 //        backButton = (Button) findViewById(R.id.backButton);
 
@@ -142,10 +143,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        changeBtn.setOnClickListener(new View.OnClickListener() {
+        listViewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recyclerViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                 startActivity(intent);
             }
         });
