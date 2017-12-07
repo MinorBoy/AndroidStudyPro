@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 //    private Button button;
     private TextView textView;
     private EditText editText;
-    private Button listViewBtn,recyclerViewBtn,button;
+    private Button listViewBtn,recyclerViewBtn,button,chatViewBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         listViewBtn = (Button) findViewById(R.id.listViewBtn);
         recyclerViewBtn = (Button) findViewById(R.id.recyclerViewBtn);
+        chatViewBtn = (Button) findViewById(R.id.chatViewBtn);
 
 //        backButton = (Button) findViewById(R.id.backButton);
 
@@ -155,6 +156,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        chatViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ChatActivity.class);
                 startActivity(intent);
             }
         });

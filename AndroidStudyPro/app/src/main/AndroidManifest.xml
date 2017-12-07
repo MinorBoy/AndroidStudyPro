@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.android.androidstudypro">
+    package="com.example.android.androidstudypro">
 
     <application
         android:allowBackup="true"
@@ -13,24 +13,23 @@
             android:name=".MainActivity"
             android:label="@string/apk_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".SecondActivity"
             android:label="@string/second_activity">
             <intent-filter>
-                <action android:name="AAA"/>
+                <action android:name="AAA" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListViewActivity">
-        </activity>
-        <activity android:name=".RecyclerViewActivity">
-        </activity>
+        <activity android:name=".ListViewActivity"></activity>
+        <activity android:name=".RecyclerViewActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

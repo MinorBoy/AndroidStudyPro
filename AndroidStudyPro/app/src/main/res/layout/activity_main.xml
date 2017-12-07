@@ -65,5 +65,12 @@
         android:text="@string/recyclerViewBtn"
         />
 
+    <Button
+        android:id="@+id/chatViewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chatViewBtn"
+        />
+
 
 </LinearLayout>

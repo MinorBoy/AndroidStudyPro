@@ -7,4 +7,5 @@
     <string name="title">标题</string>
     <string name="listViewBtn">ListView</string>
     <string name="recyclerViewBtn">RecyclerView</string>
+    <string name="chatViewBtn">ChatView</string>
 </resources>
